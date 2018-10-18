@@ -7,7 +7,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "Queue.h"
-//#include "Stack.h"
+#include "Stack.h"
 using namespace std;
 
 int main()
@@ -22,14 +22,14 @@ int main()
 
 	for (uint i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++) 
 	{marks.enqueue(vectorMarks[i]);}
-    /*
+    
 	// counts the marks in each grade band.
     Stack<int> numberFF;
 	Stack<int> numberP;
 	Stack<int> numberC;
 	Stack<int> numberD;
 	Stack<int> numberHD;
-	*/
+	
 	// FOR SENG6120 students (or extra bonus)
 	// marks.sort();
 
@@ -38,9 +38,9 @@ int main()
 	cout << "Min: " << marks.minimum() << endl;
 	cout << "Max: " << marks.maximum() << endl;
 	cout << "Stdev: " << marks.stdeviation() << endl << endl;
-	/*
+	
 	// populates the stacks.
-	for (int i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++)
+	for (uint i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++)
 	{
 		if (marks.front() < 50) {numberFF.push(marks.front());} // case FF
 		else if ((marks.front() >= 50) && (marks.front() < 65)) {numberP.push(marks.front());} // case P
@@ -58,7 +58,7 @@ int main()
 	cout << "Number of C: " << numberC.size() << "  " << numberC << endl;
 	cout << "Number of D: " << numberD.size() << "  " << numberD << endl;
 	cout << "Number of HD: " << numberHD.size() << "  " << numberHD << endl;
-	*/
+	
 	cout << "The program has finished." << endl;
 	return 0;
 }

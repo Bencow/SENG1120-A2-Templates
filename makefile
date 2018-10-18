@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=GradesDemo.cpp Node.h LinkedList.h Queue.h
+SOURCES=GradesDemo.cpp Node.h LinkedList.h Queue.h Stack.h
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=assignment2
 

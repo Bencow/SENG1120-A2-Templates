@@ -37,6 +37,14 @@ public:
   //Post condition : A node is created with the data oject provided and add at
   //                 the end of the the list
   //note : this is a deep copy, this function is making a local copy of the node passed as parameter
+
+  void addToHead(const value_type& entry);
+  //Pre condition : constant reference of the "data type" contained in the Node
+  //Post condition : A node is created with the data oject provided and add at
+  //                 the beginning of the the list
+  //note : this is a deep copy, this function is making a local copy of the node passed as parameter
+
+
   void operator += (const LinkedList& l2);
   //Pre condition : A list
   //Post condition : concatenate the two lists
@@ -78,9 +86,9 @@ public:
   //Post Cond : return an array containing a copy of all the data in the list
   //            if list is empty return NULL 
 
-  value_type& front()const;
+  value_type front()const;
   //Pre cond : the list is not enmpty
-  //Post cond : return a reference of the data of the head
+  //Post cond : return  the data of the head
 
   value_type minimum()const;
   value_type maximum()const;
@@ -88,6 +96,7 @@ public:
 
 
 };
+
 template <typename value_type>
 std::ostream& operator<<(std::ostream& out, const LinkedList<value_type>& list);
 

@@ -55,7 +55,8 @@ void LinkedList<value_type>::addToTail(const value_type& entry)
 {
   Node<value_type> *current;
   //make a local copy of the node passed as parameter
-  Node<value_type>* nd = new Node<value_type>(entry);//initialization of next and previous are useless and confusing here
+  //initialization of the Node's next and previous pointer are in the constructor
+  Node<value_type>* nd = new Node<value_type>(entry);
 
   //if the list is empty
   if(isEmpty())
@@ -76,6 +77,35 @@ void LinkedList<value_type>::addToTail(const value_type& entry)
     m_size++;
     }
 }
+
+template <typename value_type>
+void LinkedList<value_type>::addToHead(const value_type& entry)
+{
+	Node<value_type> *current;
+	//make a local copy of the node passed as parameter
+	//initialization of the Node's next and previous pointer are in the constructor
+	Node<value_type>* newNode = new Node<value_type>(entry);
+
+	//if the list is empty
+	if(isEmpty())
+	{
+	  m_head = newNode;
+	  m_tail = newNode;
+	  m_size++;
+	}
+	else
+	{
+	  //assign current to the head
+	  current = m_head;
+
+	  m_head = newNode;
+	  current->set_previous(newNode);
+	  newNode->set_next(current);
+	  newNode->set_previous(NULL);
+	  m_size++;
+	  }
+}
+
 
 template <typename value_type>
 void LinkedList<value_type>::operator +=(const LinkedList<value_type>& l)
@@ -183,7 +213,7 @@ void LinkedList<value_type>::remove_from_head()
 }
 
 template <typename value_type>
-value_type& LinkedList<value_type>::front()const
+value_type LinkedList<value_type>::front()const
 {
 	return m_head->get_data();
 }
@@ -377,7 +407,7 @@ double LinkedList<value_type>::stdeviation()const
 
 	std::cout << dev_sum << " ; ";
 
-	return sqrt( (dev_sum / (double) m_size + 1.0f) );
+	return sqrt( (dev_sum / (double) m_size) );
 }
 
 //Non-member fonctions :

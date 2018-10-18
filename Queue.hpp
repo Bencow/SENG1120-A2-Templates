@@ -21,7 +21,9 @@ void Queue<value_type>::enqueue(const value_type& entry)
 template <typename value_type>
 value_type Queue<value_type>::dequeue()
 {
+	value_type val = m_data.front();
 	m_data.remove_from_head();
+	return val;
 }
 
 template <typename value_type>
@@ -37,7 +39,7 @@ int Queue<value_type>::size()const
 }
 
 template <typename value_type>
-value_type& Queue<value_type>::front()const
+value_type Queue<value_type>::front()const
 {
 	return m_data.front();
 }
