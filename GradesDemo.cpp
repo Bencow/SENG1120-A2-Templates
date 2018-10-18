@@ -16,7 +16,7 @@ int main()
 	int vectorMarks[] = {12, 18, 26, 34, 40, 43, 50, 60, 62, 65, 67, 69, 69, 70, 71, 72, 74, 75, 80, 80, 81, 84, 90, 91, 98};
 
 	// FOR SENG6120 students (and extra bonus)
-	// int vectorMarks[] = {69, 84, 40, 65, 72, 34, 80, 43, 74, 98, 60, 62, 81, 67, 12, 69, 70, 50, 71, 75, 18, 80, 26, 90, 91};
+	//int vectorMarks[] = {69, 84, 40, 65, 72, 34, 80, 43, 74, 98, 60, 62, 81, 67, 12, 69, 70, 50, 71, 75, 18, 80, 26, 90, 91};
 
     cout << sizeof(vectorMarks)/sizeof(vectorMarks[0]) << endl << endl;
 

@@ -347,13 +347,17 @@ std::ostream& LinkedList<value_type>::display(std::ostream& out)const
 {
 	//create a stream
 	Node<value_type>* current = m_head;
+
+	out << "( ";
 	//go through the entire list
 	while(current != NULL)
 	{
 		//(add) each node's stream in the final output stream
-		out << current->get_data();
+		out << current->get_data() << " ";
 		current = current->get_next();
 	}
+	out << ")";
+
 	//return the stream containing all the nodes' display data
 	return out;
 }
@@ -404,9 +408,6 @@ double LinkedList<value_type>::stdeviation()const
 		dev_sum += pow(current->get_data()-average, 2);
 		current = current->get_next();
 	}
-
-	std::cout << dev_sum << " ; ";
-
 	return sqrt( (dev_sum / (double) m_size) );
 }
 
