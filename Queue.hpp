@@ -44,25 +44,25 @@ value_type& Queue<value_type>::front()const
 
 
 template <typename value_type>
-float Queue<value_type>::average()const
+double Queue<value_type>::average()const
 {
-
+	return m_data.calcAverage();
 }
 
 template <typename value_type>
 value_type Queue<value_type>::minimum()const
 {
-
+	return m_data.minimum();
 }
 
 template <typename value_type>
 value_type Queue<value_type>::maximum()const
 {
-
+		return m_data.maximum();
 }
 
 template <typename value_type>
-float Queue<value_type>::stdeviation()const
+double Queue<value_type>::stdeviation()const
 {
-
+	return m_data.stdeviation();
 }

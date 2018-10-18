@@ -9,6 +9,7 @@
 
 #include "Node.h"
 #include <iostream>
+#include <cmath>
 
 
 template <typename value_type>
@@ -55,7 +56,7 @@ public:
   //Pre condition : the list is not empty
   //Post condition : remove the first element
 
-  double calcAverage();
+  double calcAverage()const;
   //Pre condition : The list has to be not empty
   //Post condition : return the average of the marksof all students in the list
 
@@ -81,6 +82,9 @@ public:
   //Pre cond : the list is not enmpty
   //Post cond : return a reference of the data of the head
 
+  value_type minimum()const;
+  value_type maximum()const;
+  double stdeviation()const;
 
 
 };

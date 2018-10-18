@@ -192,7 +192,7 @@ value_type& LinkedList<value_type>::front()const
 //       and i didn't undertsand why, and don't understand why is it working now
 
 template <typename value_type>
-double LinkedList<value_type>::calcAverage()
+double LinkedList<value_type>::calcAverage()const
 {
   double sum = 0;
   Node<value_type>* current = m_head;
@@ -201,7 +201,7 @@ double LinkedList<value_type>::calcAverage()
   {
     while(current != NULL)
     {
-      sum += current->get_data().get_score();
+      sum += current->get_data();
       current = current->get_next();
     }
     return sum/m_size;
@@ -328,6 +328,57 @@ std::ostream& LinkedList<value_type>::display(std::ostream& out)const
 	return out;
 }
 
+template <typename value_type>
+value_type LinkedList<value_type>::minimum()const
+{
+	Node<value_type>* current = m_head;
+	value_type min = m_head->get_data();
+
+	while(current != NULL)
+	{
+		if(min > current->get_data())
+		{
+			min = current->get_data();
+		}
+		current = current->get_next();
+	} 
+	return min;
+}
+
+template <typename value_type>
+value_type LinkedList<value_type>::maximum()const
+{
+	Node<value_type>* current = m_head;
+	value_type max = m_head->get_data();
+
+	while(current != NULL)
+	{
+		if(max < current->get_data())
+		{
+			max = current->get_data();
+		}
+		current = current->get_next();
+	} 
+	return max;
+}
+
+template <typename value_type>
+double LinkedList<value_type>::stdeviation()const
+{
+	Node<value_type>* current = m_head;
+
+	double dev_sum = 0;
+	double average = calcAverage();
+	while(current != NULL)
+	{
+		dev_sum += pow(current->get_data()-average, 2);
+		current = current->get_next();
+	}
+
+	std::cout << dev_sum << " ; ";
+
+	return sqrt( (dev_sum / (double) m_size + 1.0f) );
+}
 
 //Non-member fonctions :
 template <typename value_type>

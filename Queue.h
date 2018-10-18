@@ -34,10 +34,10 @@ public:
 	value_type& front()const;
 
 	//Maths methods
-	float average()const;
+	double average()const;
 	value_type minimum()const;
 	value_type maximum()const;
-	float stdeviation()const;
+	double stdeviation()const;
 
 
 

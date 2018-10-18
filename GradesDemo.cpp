@@ -20,7 +20,7 @@ int main()
 
     cout << sizeof(vectorMarks)/sizeof(vectorMarks[0]) << endl << endl;
 
-	for (int i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++) 
+	for (uint i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++) 
 	{marks.enqueue(vectorMarks[i]);}
     /*
 	// counts the marks in each grade band.
@@ -29,7 +29,7 @@ int main()
 	Stack<int> numberC;
 	Stack<int> numberD;
 	Stack<int> numberHD;
-	
+	*/
 	// FOR SENG6120 students (or extra bonus)
 	// marks.sort();
 
@@ -38,7 +38,7 @@ int main()
 	cout << "Min: " << marks.minimum() << endl;
 	cout << "Max: " << marks.maximum() << endl;
 	cout << "Stdev: " << marks.stdeviation() << endl << endl;
-	
+	/*
 	// populates the stacks.
 	for (int i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++)
 	{
