@@ -38,7 +38,6 @@ int main()
 	// FOR SENG6120 students (or extra bonus)
 
 	marks.sort();
-	cout << marks;
 
     // prints the average, minimum and maximum score for the class.
 	cout << "Average: " << marks.average() << endl;
@@ -46,8 +45,6 @@ int main()
 	cout << "Max: " << marks.maximum() << endl;
 	cout << "Stdev: " << marks.stdeviation() << endl << endl;
 	
-	cout << marks.size() << endl;
-
 	// populates the stacks.
 	for (uint i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++)
 	{
@@ -67,7 +64,7 @@ int main()
 	cout << "Number of C: " << numberC.size() << "  " << numberC << endl;
 	cout << "Number of D: " << numberD.size() << "  " << numberD << endl;
 	cout << "Number of HD: " << numberHD.size() << "  " << numberHD << endl;
-	
+
 	cout << "The program has finished." << endl;
 	return 0;
 }

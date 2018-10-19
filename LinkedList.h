@@ -1,3 +1,4 @@
+//file : LinkedList.h
 //Author: Benoit Coville
 //email : covillebenoit@gmail.com
 //Student number : c3316165
@@ -94,10 +95,15 @@ public:
   value_type maximum()const;
   double stdeviation()const;
 
+private:
   void insertBefore(value_type entry, Node<value_type>* position);
+  //Pre cond : - the list is not empty
+  //           - position is a pointer on one of the node of the list -> can only be given within a class method (eg insertOrdered)
+  //Post cond : create a new node with the entry and insert it before position
+public:
   void insertOrdered(value_type entry);
-
-
+  //Pre cond : value_type has to implement operator<
+  //Post cond : create a new node with the entry and insert it in the right position 
 };
 
 template <typename value_type>

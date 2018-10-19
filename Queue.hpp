@@ -1,3 +1,4 @@
+//file : Queue.hpp
 //Author: Benoit Coville
 //email : covillebenoit@gmail.com
 //Student number : c3316165
@@ -74,7 +75,6 @@ void Queue<value_type>::sort()
 {
 	LinkedList<value_type> sort_list;
 	value_type entry;
-	std::cout << "Q size :" << size() << *this << std::endl;
 	uint save_size = size();
 
 	//For all the elements in the queue 
@@ -93,9 +93,6 @@ void Queue<value_type>::sort()
 			sort_list.insertOrdered(entry);
 		}
 	}
-	std::cout << "Q size :" << size() << *this << std::endl;
-
-	std::cout << "sort_list " << sort_list.get_size() << sort_list << std::endl;
 	//then put all the elements back in the queue
 	for(uint i = 0 ; i < save_size ; ++i )
 	{
