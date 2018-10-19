@@ -26,7 +26,8 @@ public:
   virtual ~LinkedList ();
 
   uint get_size()const;
-
+  //Pre condition : none
+  //Post condition : return the number of element in the list
 
   bool isEmpty()const;
   //Pre condition : none
@@ -66,8 +67,8 @@ public:
   //Post condition : remove the first element
 
   double calcAverage()const;
-  //Pre condition : The list has to be not empty
-  //Post condition : return the average of the marksof all students in the list
+  //Pre condition : value_type has to be a numeric type (must be able to be cast in double !)
+  //Post condition : return the average of all the value_type in the list
 
   int count(std::string name);
   //Pre condition : Student name
@@ -76,11 +77,20 @@ public:
   void order();
   void swapNodes(Node<value_type>* v1, Node<value_type>* v2);
   //Pre condition : v2 must be just after v1
-  //Post condition :
+  //Post condition : swap the nodes 
+
   void display_debug();
+  //Pre condition : value_type must implement operator<<
+  //Post condition : display the list and NULL pointers involved (eg m_tail->get_next) 
+
   void display_pointer_node(Node<value_type>* pt);
+  //Pre condition : value_type must implement operator<<
+  //Post condition : display the value pointed by bt
+  //                 if pt = NULL display (NULL)
 
   std::ostream& display(std::ostream& out) const;
+  //Pre condition : none
+  //Post condition : display all elements of the queue
 
   value_type* getAllData()const;
   //Pre Cond : the list is not empty
@@ -92,8 +102,16 @@ public:
   //Post cond : return  the data of the head
 
   value_type minimum()const;
+  //Pre condition : value_type implement operator>
+  //Post condition : return the lowest element of the queue (according to the implementation of operator> for this class)
+
   value_type maximum()const;
+  //Pre condition : value_type must implement operator<
+  //Post condition : return the highest element of the queue (according to the implementation of operator> for this class)
+
   double stdeviation()const;
+  //Pre condition : value_type has to be a numeric type (must be able to be cast in double !)
+  //Post condition : return the standard deviation of the class
 
 private:
   void insertBefore(value_type entry, Node<value_type>* position);
@@ -108,6 +126,8 @@ public:
 
 template <typename value_type>
 std::ostream& operator<<(std::ostream& out, const LinkedList<value_type>& list);
+//Pre condition : none
+//Post condition : display the list
 
 #include "LinkedList.hpp"
 

@@ -27,18 +27,21 @@ public:
 	//Pre condition : none
 	//Post condition : return the number of object in the stack
 	bool is_empty()const;
-	//Pre condition :
-	//Post condition :
+	//Pre condition : none
+	//Post condition : return true if empty
 	value_type& top();
 	//Pre condition :
 	//Post condition :
 	std::ostream& display(std::ostream& out)const;
+	//Pre condition : none (called by operator<<)
+	//Post condition : display the queue 
 
 };
 
 template <typename value_type>
 std::ostream& operator<<(std::ostream& out, const LinkedList<value_type>& list);
-
+//Pre condition : none
+//Post condition : display the stack
 
 #include "Stack.hpp"
 

@@ -155,11 +155,11 @@ void LinkedList<value_type>::remove(std::string name)
   while (current != NULL)
   {
     temp = current->get_next();
-	if(name == current->get_data().get_name())
+    if(name == current->get_data().get_name())
     {
-		found = remove_target(current);
+		  found = remove_target(current);
     }
-	current = temp;
+    current = temp;
   }
   if(!found)
     std::cout << "There's no student called " << name << " in this list" << std::endl;
@@ -218,9 +218,6 @@ value_type LinkedList<value_type>::front()const
 {
 	return m_head->get_data();
 }
-
-//Note : i got an error before, the compiler wanted this method to be constant
-//       and i didn't undertsand why, and don't understand why is it working now
 
 template <typename value_type>
 double LinkedList<value_type>::calcAverage()const
@@ -308,10 +305,10 @@ void LinkedList<value_type>::order()
       }
       else
       {
+        //Go to the next
         current = current->get_next();
       }
-      //display_debug();
-      //Go to the next
+      
     }
   }
 }
@@ -319,21 +316,24 @@ void LinkedList<value_type>::order()
 template <typename value_type>
 void LinkedList<value_type>::display_debug()
 {
-  Node<value_type> *current_ = m_head;
-  while(current_ != NULL)
+  Node<value_type> *current = m_head;
+  //for each element of the list
+  while(current != NULL)
   {
-    display_pointer_node(current_->get_previous());
-    display_pointer_node(current_);
-    display_pointer_node(current_->get_next());
+    //display all the dependecies of the current pointer
+    display_pointer_node(current->get_previous());
+    display_pointer_node(current);
+    display_pointer_node(current->get_next());
     std::cout << std::endl;
-    current_ = current_->get_next();
+    //go to the next element
+    current = current->get_next();
   }
 }
 
 template <typename value_type>
 void LinkedList<value_type>::display_pointer_node(Node<value_type>* pt)
 {
-  if(pt == NULL)
+  if(pt == NULL)//avoid crashing
   {
     std::cout << "(NULL)";
   }
@@ -368,9 +368,10 @@ value_type LinkedList<value_type>::minimum()const
 {
 	Node<value_type>* current = m_head;
 	value_type min = m_head->get_data();
-
+  //for all elements in the list
 	while(current != NULL)
 	{
+    //if min lower than current
 		if(min > current->get_data())
 		{
 			min = current->get_data();
@@ -386,8 +387,10 @@ value_type LinkedList<value_type>::maximum()const
 	Node<value_type>* current = m_head;
 	value_type max = m_head->get_data();
 
+  //for all elements in the list
 	while(current != NULL)
 	{
+    //if min lower than current
 		if(max < current->get_data())
 		{
 			max = current->get_data();
@@ -403,8 +406,11 @@ double LinkedList<value_type>::stdeviation()const
 	Node<value_type>* current = m_head;
 
 	double dev_sum = 0;
+  //calculate the average of the list to avoid calculate it N time (in the loop just under)
 	double average = calcAverage();
-	while(current != NULL)
+
+	//calculate : SUM[0->N] : ( (xi - µ)² )
+  while(current != NULL)
 	{
 		dev_sum += pow(current->get_data()-average, 2);
 		current = current->get_next();
@@ -474,6 +480,7 @@ void LinkedList<value_type>::insertOrdered(value_type entry)
 template <typename value_type>
 std::ostream& operator<<(std::ostream& out, const LinkedList<value_type>& list)
 {
+  //call inner function display
   return list.display(out);
 }
 

@@ -21,10 +21,23 @@ public:
 
   //Accessors
   Node* get_next()const;
+  //Pre condition : none
+  //Post condition : return m_next
+
   void set_next(Node<value_type>* entry);
+  //Pre condition :
+  //Post condition :
   Node* get_previous()const;
+  //Pre condition : none
+  //Post condition : return m_previous
+
   void set_previous(Node<value_type>* entry);
+  //Pre condition : valid pointer to a Node
+  //Post condition : none
+
   value_type get_data()const;
+  //Pre condition : none
+  //Post condition : return the value_type contained in the node
 
 
 private:
