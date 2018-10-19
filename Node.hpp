@@ -16,7 +16,9 @@ Node<value_type>::Node (const value_type& entry) :
 
 template <typename value_type>
 Node<value_type>::~Node()
-{}
+{
+	//No dynamic allocation in this class
+}
 
 
 template <typename value_type>

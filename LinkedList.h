@@ -6,7 +6,7 @@
 //Assignement 2 : templates
 
 #ifndef LINKED_LIST_H
-#define LINKED_LIST_H value
+#define LINKED_LIST_H
 
 #include "Node.h"
 #include <iostream>
@@ -23,7 +23,7 @@ private:
 
 public:
   LinkedList ();
-  virtual ~LinkedList ();
+  ~LinkedList ();
 
   uint get_size()const;
   //Pre condition : none

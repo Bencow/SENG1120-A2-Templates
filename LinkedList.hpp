@@ -13,7 +13,7 @@ LinkedList<value_type>::LinkedList() : m_head(NULL), m_tail(NULL), m_size(0)
 {}
 
 template <typename value_type>
-LinkedList<value_type>::~LinkedList()
+LinkedList<value_type>::~LinkedList()//Destructor
 {
 	Node<value_type>* current = m_head;
 

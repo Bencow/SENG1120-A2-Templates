@@ -6,7 +6,7 @@
 //Assignement 2 : templates
 
 #ifndef QUEUE_H
-#define QUEUE_H value
+#define QUEUE_H
 
 #include "LinkedList.h"
 

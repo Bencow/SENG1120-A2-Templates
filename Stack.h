@@ -17,6 +17,10 @@ private:
 	LinkedList<value_type> m_data;
 
 public:
+	//Basic constructor and destructor
+	Stack();
+	~Stack();
+
 	void push(const value_type& entry);
 	//Pre condition : none
 	//Post condition : insert an object at the top of the stack

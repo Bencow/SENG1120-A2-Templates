@@ -11,7 +11,9 @@ Queue<value_type>::Queue()
 
 template <typename value_type>
 Queue<value_type>::~Queue()
-{}
+{
+	//calling the destructor of the list m_data
+}
 
 template <typename value_type>
 void Queue<value_type>::enqueue(const value_type& entry)

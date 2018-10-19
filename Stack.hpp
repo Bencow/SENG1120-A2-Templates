@@ -7,6 +7,16 @@
 
 
 template <typename value_type>
+Stack<value_type>::Stack()
+{}
+
+template <typename value_type>
+Stack<value_type>::~Stack()
+{
+	//calling the destructor of the list m_data
+}
+
+template <typename value_type>
 void Stack<value_type>::push(const value_type& entry)
 {
 	m_data.addToHead(entry);

@@ -17,7 +17,7 @@ public:
   //Constructors and destructor
   Node (const value_type& entry, Node<value_type>* nxt, Node<value_type>* prev);
   Node (const value_type& entry);
-  virtual ~Node ();
+  ~Node ();
 
   //Accessors
   Node* get_next()const;
