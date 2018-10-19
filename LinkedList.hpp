@@ -37,7 +37,7 @@ LinkedList<value_type>::~LinkedList()
 }
 
 template <typename value_type>
-int LinkedList<value_type>::get_size()const
+uint LinkedList<value_type>::get_size()const
 { return m_size; }
 
 template <typename value_type>
@@ -411,9 +411,69 @@ double LinkedList<value_type>::stdeviation()const
 	return sqrt( (dev_sum / (double) m_size) );
 }
 
+
+template <typename value_type>
+void LinkedList<value_type>::insertBefore(value_type entry, Node<value_type>* position)
+{
+  Node<value_type>* newNode = new Node<value_type>(entry);
+
+  //insert before the head
+  if(position == m_head)
+  {
+    addToHead(entry);
+  }
+  else//insert in the middle (before position)
+  {
+    //set up newNode's pointers
+    newNode->set_next(position);
+    newNode->set_previous(position->get_previous());
+    //set up the neighbours' pointers
+    position->get_previous()->set_next(newNode);// previous
+    position->set_previous(newNode);//next = current
+    m_size++;   
+  }
+  //Don't have to manage the insertion at the end because it's an insertion before position
+}
+
+template <typename value_type>
+void LinkedList<value_type>::insertOrdered(value_type entry)
+{
+  bool inserted = false;
+	Node<value_type>* current = m_head;
+	
+  //Case current == head
+  if(entry < m_head->get_data())
+  {
+    //insert the node from the head
+    addToHead(entry);
+    inserted = true;
+  }
+  current = current->get_next();
+
+	while(current != NULL)
+	{
+		//if the entry is lower than current's value AND if the node hasn't been inserted before
+		if(entry < current->get_data() && !inserted)
+		{
+			//insert the Node here !
+      insertBefore(entry, current);
+
+      inserted = true;
+		}
+		current = current->get_next();
+	}
+  //if the entry is higher than all the other values in the list
+  if(!inserted)
+  {
+    addToTail(entry);
+  }
+}
+
 //Non-member fonctions :
 template <typename value_type>
 std::ostream& operator<<(std::ostream& out, const LinkedList<value_type>& list)
 {
   return list.display(out);
 }
+
+

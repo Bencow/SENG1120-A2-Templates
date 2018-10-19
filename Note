@@ -9,3 +9,7 @@ min and max can return a value type so if we do a Queue with student we can retu
 
 average and stdeviation need to return a number so let's take float
 
+Quentin's question on the forum :
+	-the code should work with float/doubleS
+
+Sorting :

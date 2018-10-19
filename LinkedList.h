@@ -24,7 +24,7 @@ public:
   LinkedList ();
   virtual ~LinkedList ();
 
-  int get_size()const;
+  uint get_size()const;
 
 
   bool isEmpty()const;
@@ -93,6 +93,9 @@ public:
   value_type minimum()const;
   value_type maximum()const;
   double stdeviation()const;
+
+  void insertBefore(value_type entry, Node<value_type>* position);
+  void insertOrdered(value_type entry);
 
 
 };

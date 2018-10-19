@@ -33,7 +33,7 @@ bool Queue<value_type>::is_empty()const
 }
 
 template <typename value_type>
-int Queue<value_type>::size()const
+uint Queue<value_type>::size()const
 {
 	return m_data.get_size();
 }
@@ -67,4 +67,53 @@ template <typename value_type>
 double Queue<value_type>::stdeviation()const
 {
 	return m_data.stdeviation();
+}
+
+template <typename value_type>
+void Queue<value_type>::sort()
+{
+	LinkedList<value_type> sort_list;
+	value_type entry;
+	std::cout << "Q size :" << size() << *this << std::endl;
+	uint save_size = size();
+
+	//For all the elements in the queue 
+	for(uint i = 0 ; i < save_size ; ++i)
+	{
+		entry = dequeue();
+
+		//the list is empty, add this node at the beginning
+		if(sort_list.isEmpty())
+		{
+			sort_list.addToTail(entry);
+		}
+		else//if the sorting list is not empty
+		{
+			//add the element ordered
+			sort_list.insertOrdered(entry);
+		}
+	}
+	std::cout << "Q size :" << size() << *this << std::endl;
+
+	std::cout << "sort_list " << sort_list.get_size() << sort_list << std::endl;
+	//then put all the elements back in the queue
+	for(uint i = 0 ; i < save_size ; ++i )
+	{
+		enqueue(sort_list.front());
+		sort_list.remove_from_head();
+	}
+}
+
+template <typename value_type>
+std::ostream& Queue<value_type>::display(std::ostream& out)const
+{
+	out << m_data;
+	return out;
+}
+
+//Non-member fonctions :
+template <typename value_type>
+std::ostream& operator<<(std::ostream& out, const Queue<value_type>& queue)
+{
+	return queue.display(out);
 }

@@ -13,32 +13,42 @@ using namespace std;
 int main()
 {
 	Queue<int> marks;
-	int vectorMarks[] = {12, 18, 26, 34, 40, 43, 50, 60, 62, 65, 67, 69, 69, 70, 71, 72, 74, 75, 80, 80, 81, 84, 90, 91, 98};
+	//int vectorMarks[] = {12, 18, 26, 34, 40, 43, 50, 60, 62, 65, 67, 69, 69, 70, 71, 72, 74, 75, 80, 80, 81, 84, 90, 91, 98};
 
 	// FOR SENG6120 students (and extra bonus)
-	//int vectorMarks[] = {69, 84, 40, 65, 72, 34, 80, 43, 74, 98, 60, 62, 81, 67, 12, 69, 70, 50, 71, 75, 18, 80, 26, 90, 91};
+	int vectorMarks[] = {69, 84, 40, 65, 72, 34, 80, 43, 74, 98, 60, 62, 81, 67, 12, 69, 70, 50, 71, 75, 18, 80, 26, 90, 91};
 
+	
     cout << sizeof(vectorMarks)/sizeof(vectorMarks[0]) << endl << endl;
 
+
 	for (uint i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++) 
-	{marks.enqueue(vectorMarks[i]);}
-    
+	{
+		marks.enqueue(vectorMarks[i]);
+	}
+
+
 	// counts the marks in each grade band.
+    	/*
     Stack<int> numberFF;
 	Stack<int> numberP;
 	Stack<int> numberC;
 	Stack<int> numberD;
 	Stack<int> numberHD;
-	
+	*/
 	// FOR SENG6120 students (or extra bonus)
-	// marks.sort();
 
+	marks.sort();
+	cout << marks;
+	/*
     // prints the average, minimum and maximum score for the class.
 	cout << "Average: " << marks.average() << endl;
 	cout << "Min: " << marks.minimum() << endl;
 	cout << "Max: " << marks.maximum() << endl;
 	cout << "Stdev: " << marks.stdeviation() << endl << endl;
 	
+	cout << marks.size() << endl;
+
 	// populates the stacks.
 	for (uint i=0; i<sizeof(vectorMarks)/sizeof(vectorMarks[0]); i++)
 	{
@@ -58,7 +68,7 @@ int main()
 	cout << "Number of C: " << numberC.size() << "  " << numberC << endl;
 	cout << "Number of D: " << numberD.size() << "  " << numberD << endl;
 	cout << "Number of HD: " << numberHD.size() << "  " << numberHD << endl;
-	
+	*/
 	cout << "The program has finished." << endl;
 	return 0;
 }

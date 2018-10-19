@@ -15,8 +15,6 @@ class Queue
 private:
 	LinkedList<value_type> m_data;
 
-
-
 public:
 	Queue();
 	~Queue();
@@ -36,7 +34,7 @@ public:
 	//Pre condition : none
 	//Post condition : return true if the queue is empty
 
-	int size()const;
+	uint size()const;
 	//Pre condition :
 	//Post condition :
 
@@ -63,9 +61,13 @@ public:
 	//Pre condition :
 	//Post condition :
 
+	std::ostream& display(std::ostream& out)const;
 
 
 };
+
+template <typename value_type>
+std::ostream& operator<<(std::ostream& out, const Queue<value_type>& queue);
 
 //Template implementation of the methods
 #include "Queue.hpp"
