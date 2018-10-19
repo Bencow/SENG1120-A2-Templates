@@ -29,18 +29,17 @@ int main()
 
 
 	// counts the marks in each grade band.
-    	/*
     Stack<int> numberFF;
 	Stack<int> numberP;
 	Stack<int> numberC;
 	Stack<int> numberD;
 	Stack<int> numberHD;
-	*/
+	
 	// FOR SENG6120 students (or extra bonus)
 
 	marks.sort();
 	cout << marks;
-	/*
+
     // prints the average, minimum and maximum score for the class.
 	cout << "Average: " << marks.average() << endl;
 	cout << "Min: " << marks.minimum() << endl;
@@ -68,7 +67,7 @@ int main()
 	cout << "Number of C: " << numberC.size() << "  " << numberC << endl;
 	cout << "Number of D: " << numberD.size() << "  " << numberD << endl;
 	cout << "Number of HD: " << numberHD.size() << "  " << numberHD << endl;
-	*/
+	
 	cout << "The program has finished." << endl;
 	return 0;
 }
